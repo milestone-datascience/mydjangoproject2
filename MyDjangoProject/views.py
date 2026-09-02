@@ -7,5 +7,3 @@ def home(request):
 def about(request):
   return render(request,template_name="about.html")
 
-def post(request):
-  return render(request,template_name="post.html")
