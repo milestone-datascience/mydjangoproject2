@@ -1,21 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'layout.html' %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Page</title>
-</head>
+{% block title %}
+About Page
+{% endblock %}
 
-<body>
-  <nav>
-    <a href="/">Home</a> |
-    <a href="/about">About</a> |
-    <a href="/posts">Posts</a>
-  </nav>
-  <hr>
-  <h1>This is My About Page</h1>
-  <p>Welcome to My Webpage</p>
-</body>
-
-</html>
+{% block content %}
+<h1>This is My About Page</h1>
+<p>This page is all about about page</p>
+{% endblock %}

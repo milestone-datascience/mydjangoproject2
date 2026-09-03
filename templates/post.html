@@ -1,36 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'layout.html' %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Post Page</title>
-</head>
+{% block title %}
+Post Page
+{% endblock %}
 
-<body>
-  <nav>
-    <a href="/">Home</a> |
-    <a href="/about">About</a> |
-    <a href="/posts">Posts</a>
-  </nav>
-  <hr>
-  <h1>This is My Post Page</h1>
-  <p>Welcome to My Webpage</p>
-
-  <ul>
-    <li>
-      <p>This is the Post About Java</p>
-    </li>
-    <li>
-      <p>This is the Post About Python</p>
-    </li>
-    <li>
-      <p>This is the Post About Django</p>
-    </li>
-    <li>
-      <p>This is the Post About Javascript</p>
-    </li>
-  </ul>
-</body>
-
-</html>
+{% block content %}
+<h1>This is My Post Page</h1>
+<p>This is the list of all the post</p>
+<ul>
+  {% for i in data %}
+  <li>{{i}}</li>
+  {% endfor %}
+</ul>
+{% endblock %}
