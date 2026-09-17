@@ -7,11 +7,16 @@ Post Page
 {% block content %}
 <h1>This is My Post Page</h1>
 <p>This is the list of all the post</p>
+<form method="POST">
+  {% csrf_token %}
+  {{form.as_p}}
+  <button>Submit</button>
+</form>
 <ul>
   {% for i in data %}
   <li>
     <h1>{{i.post_title}}</h1>
-    <h2>{{i.description}}</h2>
+    <p>{{i.description}}</p>
   </li>
   {% endfor %}
 </ul>
