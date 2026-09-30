@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+
+  <body>
+    <nav>
+      {% if username.is_authenticated %}
+      <span>{{username}}</span> | {% endif %} <a href="/">Home</a> |
+      <a href="/about">About</a> | <a href="/post">Post</a> |
+      <a href="/admin">Admin</a>
+    </nav>
+    <hr />
+    {% block content %}{% endblock %}
+  </body>
+</html>
