@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Post Page
+{% endblock %}
+
+{% block content %}
+<h1>This is My Post Page</h1>
+<p>This is the list of all the post</p>
+<div class="post-form">
+
+  <form method="POST">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">Submit</button>
+
+  </form>
+
+</div>
+<ul>
+  {% for i in data %}
+  <li>
+    <h1>{{i.post_title}}</h1>
+    <p>{{i.description}}</p>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
