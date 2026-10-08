@@ -1,0 +1,61 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>{% block title %}{% endblock %}</title>
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+  <nav class="navbar">
+
+    <div class="nav-container">
+
+      <div class="logo">
+        My Django Blog
+      </div>
+
+      <div class="nav-links">
+
+        {% if username.is_authenticated %}
+        <span class="username">Welcome, {{ username }}</span>
+        {% endif %}
+
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/post">Post</a>
+
+        {% if not username.is_authenticated %}
+        <a href="/user/login">Login</a>
+        <a href="/user/register">Register</a>
+        {% endif %}
+
+        {% if username.is_authenticated %}
+        <a href="/user/logout">Logout</a>
+        {% endif %}
+        {% if username.is_superuser %}
+        <a href="/admin">Admin</a>
+        {% endif %}
+
+      </div>
+
+    </div>
+
+  </nav>
+
+  <main class="container">
+
+    {% block content %}{% endblock %}
+
+  </main>
+
+</body>
+
+</html>
